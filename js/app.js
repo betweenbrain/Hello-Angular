@@ -7,4 +7,17 @@
  * License    GNU GPL v2 or later
  */
 
-var app = angular.module('helloApp', []);
+alert('The page just loaded.');
+
+var app = angular.module('helloApp', ['ngRoute']);
+
+app.config(function ($routeProvider) {
+	$routeProvider
+		.when('/', {
+			controller: 'HomeController',
+			templateUrl: 'views/home.html'
+		})
+		.otherwise({
+			redirectTo: '/'
+		});
+});
