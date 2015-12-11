@@ -11,9 +11,13 @@ alert('The page just loaded.');
 
 var app = angular.module('helloApp', ['ngRoute']);
 
-app.config(function ($routeProvider) {
+app.config(function ($locationProvider, $routeProvider) {
 	$routeProvider
 		.when('/', {
+			controller : 'HomeController',
+			templateUrl: 'views/home.html'
+		})
+		.when('/contact', {
 			controller : 'HomeController',
 			templateUrl: 'views/home.html'
 		})
@@ -24,4 +28,7 @@ app.config(function ($routeProvider) {
 		.otherwise({
 			redirectTo: '/'
 		});
+
+	// use the HTML5 History API
+	$locationProvider.html5Mode(true);
 });
