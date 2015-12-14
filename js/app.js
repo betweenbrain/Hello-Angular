@@ -18,8 +18,8 @@ app.config(function ($locationProvider, $routeProvider) {
 			templateUrl: 'views/home.html'
 		})
 		.when('/contact', {
-			controller : 'HomeController',
-			templateUrl: 'views/home.html'
+			controller : 'ContactController',
+			templateUrl: 'views/contact.html'
 		})
 		.when('/about', {
 			controller : 'AboutController',
